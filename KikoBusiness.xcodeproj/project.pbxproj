@@ -14,6 +14,7 @@
 		06F64D531B079297005722D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D521B079297005722D2 /* Images.xcassets */; };
 		06F64D561B079297005722D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D541B079297005722D2 /* LaunchScreen.xib */; };
 		06F64D621B079297005722D2 /* KikoBusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F64D611B079297005722D2 /* KikoBusinessTests.swift */; };
+		06F64D6C1B079459005722D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64D6B1B079459005722D2 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		06F64D5B1B079297005722D2 /* KikoBusinessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KikoBusinessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F64D601B079297005722D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F64D611B079297005722D2 /* KikoBusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KikoBusinessTests.swift; sourceTree = "<group>"; };
+		06F64D6B1B079459005722D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06F64D6C1B079459005722D2 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 		06F64D3A1B079297005722D2 = {
 			isa = PBXGroup;
 			children = (
+				06F64D6B1B079459005722D2 /* CoreLocation.framework */,
 				06F64D451B079297005722D2 /* KikoBusiness */,
 				06F64D5E1B079297005722D2 /* KikoBusinessTests */,
 				06F64D441B079297005722D2 /* Products */,
