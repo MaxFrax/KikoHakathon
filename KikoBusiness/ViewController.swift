@@ -9,10 +9,14 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var makeUpGif: UIImageView!
-    @IBOutlet weak var lblMinor: UILabel!
+    // @IBOutlet weak var makeUpGif: UIImageView!
+    // @IBOutlet weak var lblMinor: UILabel!
+    
+    @IBOutlet weak var navigationBarTitle: UINavigationItem!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     struct section {
         var beacon : CLBeacon
@@ -24,7 +28,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.initialDate = NSDate()
             self.finalDate = NSDate()
         }
-        
     }
     
     var currentSection : section!
@@ -34,10 +37,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "ACFD065E-C3C0-11E3-9BBE-1A514932AC01"), identifier: "0")
+    
+    private let reuseIdentifier = "KikoCellIdentifier"
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 0.0, right: 10.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // set collection view
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         
         //assegno delegato location manager
         locationManager.delegate = self
@@ -66,14 +76,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if (currentSection == nil) {
                     //salva prima sezione visitata
                     currentSection = section(beacon: b)
-                    switchImages()
                     sectionList.append(currentSection)
-                    lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
+                    //switchImages()
+                    //lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
                 }
                 else if(currentSection.beacon.minor != b.minor && currentSection.beacon.accuracy > b.accuracy){
                     currentSection.finalDate = NSDate()                    
                     if (currentSection.finalDate.timeIntervalSinceDate(currentSection.initialDate) > 1) {
-                        switchImages()
+                        //switchImages()
                         sectionList.append(currentSection)
                     }
                     currentSection = section(beacon: b)
@@ -82,7 +92,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func switchImages() {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
+        cell.backgroundColor = UIColor.blackColor()
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView!,
+        layout collectionViewLayout: UICollectionViewLayout!,
+        sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
+            let cell_width = self.view.bounds.width/2
+            return CGSize(width: cell_width-15, height: cell_width-15)
+    }
+    
+    func collectionView(collectionView: UICollectionView!,
+        layout collectionViewLayout: UICollectionViewLayout!,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+
+
+    
+    /*func switchImages() {
         // no image displayed
         if (currentImage == nil) {
             currentImage = "img1.gif"
@@ -98,7 +137,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         makeUpGif.image = UIImage(named: currentImage)
         self.reloadInputViews()
-    }
+    }*/
 
 }
 

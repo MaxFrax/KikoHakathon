@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -16,75 +16,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Esq-az-Fmf">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="5Uq-bM-n3w"/>
-                                    <constraint firstAttribute="height" constant="300" id="FGW-J7-abB"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5Uq-bM-n3w"/>
-                                        <exclude reference="FGW-J7-abB"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="50" y="145" width="300" height="300"/>
-                                    <mask key="constraints">
-                                        <include reference="5Uq-bM-n3w"/>
-                                        <include reference="FGW-J7-abB"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igl-wV-ada">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="179" y="116" width="42" height="21"/>
-                                </variation>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqz-Fb-aSP">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="KIKO" id="xuz-pN-0fU"/>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gj7-T6-S5S">
+                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gpN-8N-vhF">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KikoCellIdentifier" id="SqH-1u-jIb">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Esq-az-Fmf" firstAttribute="top" secondItem="Igl-wV-ada" secondAttribute="bottom" constant="8" id="DSq-ag-ICf"/>
-                            <constraint firstAttribute="centerX" secondItem="Igl-wV-ada" secondAttribute="centerX" id="Pw8-7X-t0p"/>
-                            <constraint firstAttribute="centerY" secondItem="Esq-az-Fmf" secondAttribute="centerY" id="bkT-8M-a1f"/>
-                            <constraint firstAttribute="centerX" secondItem="Esq-az-Fmf" secondAttribute="centerX" id="wrB-wq-2Ne"/>
+                            <constraint firstItem="yqz-Fb-aSP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="FHW-8y-qu9"/>
+                            <constraint firstAttribute="trailing" secondItem="yqz-Fb-aSP" secondAttribute="trailing" id="Hef-HB-VFr"/>
+                            <constraint firstItem="yqz-Fb-aSP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="keM-Nt-LEb"/>
+                            <constraint firstItem="yqz-Fb-aSP" firstAttribute="leading" secondItem="Gj7-T6-S5S" secondAttribute="leading" id="lq7-xy-0ZM"/>
+                            <constraint firstItem="yqz-Fb-aSP" firstAttribute="trailing" secondItem="Gj7-T6-S5S" secondAttribute="trailing" id="xb5-XX-kHd"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Esq-az-Fmf"/>
-                                <exclude reference="Igl-wV-ada"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="DSq-ag-ICf"/>
-                                <exclude reference="bkT-8M-a1f"/>
-                                <exclude reference="wrB-wq-2Ne"/>
-                                <exclude reference="Pw8-7X-t0p"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Esq-az-Fmf"/>
-                                <include reference="Igl-wV-ada"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="DSq-ag-ICf"/>
-                                <include reference="bkT-8M-a1f"/>
-                                <include reference="wrB-wq-2Ne"/>
-                                <include reference="Pw8-7X-t0p"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="lblMinor" destination="Igl-wV-ada" id="19n-jr-Dnv"/>
-                        <outlet property="makeUpGif" destination="Esq-az-Fmf" id="8La-Rk-Nbd"/>
+                        <outlet property="collectionView" destination="Gj7-T6-S5S" id="p3v-XK-a7h"/>
+                        <outlet property="navigationBarTitle" destination="xuz-pN-0fU" id="ls9-sh-PPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="243" y="469"/>
         </scene>
     </scenes>
 </document>
