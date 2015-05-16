@@ -11,6 +11,9 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var makeUpGif: UIImageView!
+    @IBOutlet weak var lblMinor: UILabel!
+    
     struct section {
         var beacon : CLBeacon
         var initialDate : NSDate
@@ -24,7 +27,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    let sectionList : [section] = []
+    var currentSection : section!
+    var currentImage : String!
+    
+    var sectionList : [section] = []
     
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "ACFD065E-C3C0-11E3-9BBE-1A514932AC01"), identifier: "0")
@@ -57,9 +63,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             // quando ne troviamo uno near
             if(b.proximity == CLProximity.Near){
                 //salvare roba
+                if (currentSection == nil) {
+                    //salva prima sezione visitata
+                    currentSection = section(beacon: b)
+                    switchImages()
+                    lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
+                }
+                else if(currentSection.beacon.minor != b.minor && currentSection.beacon.accuracy > b.accuracy){
+                    currentSection.finalDate = NSDate()                    
+                    if (currentSection.finalDate.timeIntervalSinceDate(currentSection.initialDate) > 1) {
+                        switchImages()
+                        sectionList.append(currentSection)
+                    }
+                    currentSection = section(beacon: b)
+                }
             }
         }
-        
+    }
+    
+    func switchImages() {
+        // no image displayed
+        if (currentImage == nil) {
+            currentImage = "img1.gif"
+        }
+        // switch between two images
+        else {
+            if(currentImage == "img1.gif") {
+                currentImage = "img2.gif"
+            }
+            else {
+                currentImage = "img1.gif"
+            }
+        }
+        makeUpGif.image = UIImage(named: currentImage)
+        self.reloadInputViews()
     }
 
 }

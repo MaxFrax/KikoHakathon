@@ -11,10 +11,12 @@
 		06F64D4C1B079297005722D2 /* KikoBusiness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06F64D4A1B079297005722D2 /* KikoBusiness.xcdatamodeld */; };
 		06F64D4E1B079297005722D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F64D4D1B079297005722D2 /* ViewController.swift */; };
 		06F64D511B079297005722D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D4F1B079297005722D2 /* Main.storyboard */; };
-		06F64D531B079297005722D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D521B079297005722D2 /* Images.xcassets */; };
 		06F64D561B079297005722D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D541B079297005722D2 /* LaunchScreen.xib */; };
 		06F64D621B079297005722D2 /* KikoBusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F64D611B079297005722D2 /* KikoBusinessTests.swift */; };
 		06F64D6C1B079459005722D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64D6B1B079459005722D2 /* CoreLocation.framework */; };
+		06F64D6E1B07AA7A005722D2 /* img1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D6D1B07AA7A005722D2 /* img1.gif */; };
+		06F64D721B07ACF6005722D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D711B07ACF6005722D2 /* Images.xcassets */; };
+		06F64D741B07AF4C005722D2 /* img2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D731B07AF4C005722D2 /* img2.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +36,14 @@
 		06F64D4B1B079297005722D2 /* KikoBusiness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KikoBusiness.xcdatamodel; sourceTree = "<group>"; };
 		06F64D4D1B079297005722D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06F64D501B079297005722D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		06F64D521B079297005722D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06F64D551B079297005722D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		06F64D5B1B079297005722D2 /* KikoBusinessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KikoBusinessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F64D601B079297005722D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F64D611B079297005722D2 /* KikoBusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KikoBusinessTests.swift; sourceTree = "<group>"; };
 		06F64D6B1B079459005722D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		06F64D6D1B07AA7A005722D2 /* img1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = img1.gif; sourceTree = "<group>"; };
+		06F64D711B07ACF6005722D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		06F64D731B07AF4C005722D2 /* img2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = img2.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +87,12 @@
 		06F64D451B079297005722D2 /* KikoBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				06F64D711B07ACF6005722D2 /* Images.xcassets */,
+				06F64D6D1B07AA7A005722D2 /* img1.gif */,
+				06F64D731B07AF4C005722D2 /* img2.gif */,
 				06F64D481B079297005722D2 /* AppDelegate.swift */,
 				06F64D4D1B079297005722D2 /* ViewController.swift */,
 				06F64D4F1B079297005722D2 /* Main.storyboard */,
-				06F64D521B079297005722D2 /* Images.xcassets */,
 				06F64D541B079297005722D2 /* LaunchScreen.xib */,
 				06F64D4A1B079297005722D2 /* KikoBusiness.xcdatamodeld */,
 				06F64D461B079297005722D2 /* Supporting Files */,
@@ -200,8 +206,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				06F64D511B079297005722D2 /* Main.storyboard in Resources */,
+				06F64D721B07ACF6005722D2 /* Images.xcassets in Resources */,
+				06F64D741B07AF4C005722D2 /* img2.gif in Resources */,
 				06F64D561B079297005722D2 /* LaunchScreen.xib in Resources */,
-				06F64D531B079297005722D2 /* Images.xcassets in Resources */,
+				06F64D6E1B07AA7A005722D2 /* img1.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

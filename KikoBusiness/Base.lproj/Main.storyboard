@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="KikoBusiness" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +15,69 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Esq-az-Fmf">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5Uq-bM-n3w"/>
+                                    <constraint firstAttribute="height" constant="300" id="FGW-J7-abB"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5Uq-bM-n3w"/>
+                                        <exclude reference="FGW-J7-abB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="5Uq-bM-n3w"/>
+                                        <include reference="FGW-J7-abB"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igl-wV-ada">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Esq-az-Fmf" firstAttribute="top" secondItem="Igl-wV-ada" secondAttribute="bottom" constant="8" id="DSq-ag-ICf"/>
+                            <constraint firstAttribute="centerX" secondItem="Igl-wV-ada" secondAttribute="centerX" id="Pw8-7X-t0p"/>
+                            <constraint firstAttribute="centerY" secondItem="Esq-az-Fmf" secondAttribute="centerY" id="bkT-8M-a1f"/>
+                            <constraint firstAttribute="centerX" secondItem="Esq-az-Fmf" secondAttribute="centerX" id="wrB-wq-2Ne"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Esq-az-Fmf"/>
+                                <exclude reference="Igl-wV-ada"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="DSq-ag-ICf"/>
+                                <exclude reference="bkT-8M-a1f"/>
+                                <exclude reference="wrB-wq-2Ne"/>
+                                <exclude reference="Pw8-7X-t0p"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Esq-az-Fmf"/>
+                                <include reference="Igl-wV-ada"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="DSq-ag-ICf"/>
+                                <include reference="bkT-8M-a1f"/>
+                                <include reference="wrB-wq-2Ne"/>
+                                <include reference="Pw8-7X-t0p"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="lblMinor" destination="Igl-wV-ada" id="19n-jr-Dnv"/>
+                        <outlet property="makeUpGif" destination="Esq-az-Fmf" id="8La-Rk-Nbd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
