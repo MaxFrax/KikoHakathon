@@ -13,6 +13,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var makeUpGif: UIImageView!
     @IBOutlet weak var lblMinor: UILabel!
+    @IBOutlet weak var lblDebug: UILabel!
     
     struct section {
         var beacon : CLBeacon
@@ -34,7 +35,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "ACFD065E-C3C0-11E3-9BBE-1A514932AC01"), identifier: "0")
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -50,35 +51,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         //avviamo la magia
         locationManager.startRangingBeaconsInRegion(region)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
-
+        
         // guardiamo tutti i beacon visibili
         for b in beacons as! [CLBeacon]! {
             // quando ne troviamo uno near
             if(b.proximity == CLProximity.Near){
                 //salvare roba
                 if (currentSection == nil) {
-                    //salva prima sezione visitata
-                    currentSection = section(beacon: b)
-                    switchImages()
-                    sectionList.append(currentSection)
-                    lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
-                }
-                else if(currentSection.beacon.minor != b.minor && currentSection.beacon.accuracy > b.accuracy){
-                    currentSection.finalDate = NSDate()                    
+                //salva prima sezione visitata
+                currentSection = section(beacon: b)
+                switchImages()
+                sectionList.append(currentSection)
+                lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
+                } else if(currentSection.beacon.minor != b.minor && currentSection.beacon.accuracy > b.accuracy){
+                    currentSection.finalDate = NSDate()
+                    var nextCurrent = section(beacon: b)
                     if (currentSection.finalDate.timeIntervalSinceDate(currentSection.initialDate) > 1) {
                         switchImages()
-                        sectionList.append(currentSection)
+                        lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
+                        currentSection = section(beacon: b)
+                        sectionList.append(nextCurrent)
                     }
-                    currentSection = section(beacon: b)
+                    
+                    currentSection = nextCurrent
                 }
             }
+        }
+        
+        lblDebug.text = "P: "
+        for aSection in sectionList {
+            lblDebug.text = "\(lblDebug.text!) \(aSection.beacon.minor)"
         }
     }
     
@@ -87,7 +96,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if (currentImage == nil) {
             currentImage = "img1.gif"
         }
-        // switch between two images
+            // switch between two images
         else {
             if(currentImage == "img1.gif") {
                 currentImage = "img2.gif"
@@ -99,6 +108,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         makeUpGif.image = UIImage(named: currentImage)
         self.reloadInputViews()
     }
-
+    
 }
 

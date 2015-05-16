@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -45,40 +46,58 @@
                                     <rect key="frame" x="179" y="116" width="42" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2o-7A-Dzd">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="u2o-7A-Dzd" secondAttribute="bottom" constant="20" id="0eC-ee-sci"/>
                             <constraint firstItem="Esq-az-Fmf" firstAttribute="top" secondItem="Igl-wV-ada" secondAttribute="bottom" constant="8" id="DSq-ag-ICf"/>
                             <constraint firstAttribute="centerX" secondItem="Igl-wV-ada" secondAttribute="centerX" id="Pw8-7X-t0p"/>
+                            <constraint firstItem="u2o-7A-Dzd" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="aPK-j3-hEA"/>
                             <constraint firstAttribute="centerY" secondItem="Esq-az-Fmf" secondAttribute="centerY" id="bkT-8M-a1f"/>
+                            <constraint firstItem="u2o-7A-Dzd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="f65-ep-2Qw"/>
                             <constraint firstAttribute="centerX" secondItem="Esq-az-Fmf" secondAttribute="centerX" id="wrB-wq-2Ne"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Esq-az-Fmf"/>
                                 <exclude reference="Igl-wV-ada"/>
+                                <exclude reference="u2o-7A-Dzd"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="DSq-ag-ICf"/>
                                 <exclude reference="bkT-8M-a1f"/>
                                 <exclude reference="wrB-wq-2Ne"/>
                                 <exclude reference="Pw8-7X-t0p"/>
+                                <exclude reference="aPK-j3-hEA"/>
+                                <exclude reference="f65-ep-2Qw"/>
+                                <exclude reference="0eC-ee-sci"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Esq-az-Fmf"/>
                                 <include reference="Igl-wV-ada"/>
+                                <include reference="u2o-7A-Dzd"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="DSq-ag-ICf"/>
                                 <include reference="bkT-8M-a1f"/>
                                 <include reference="wrB-wq-2Ne"/>
                                 <include reference="Pw8-7X-t0p"/>
+                                <include reference="aPK-j3-hEA"/>
+                                <include reference="f65-ep-2Qw"/>
+                                <include reference="0eC-ee-sci"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="lblDebug" destination="u2o-7A-Dzd" id="kdN-MR-SBf"/>
                         <outlet property="lblMinor" destination="Igl-wV-ada" id="19n-jr-Dnv"/>
                         <outlet property="makeUpGif" destination="Esq-az-Fmf" id="8La-Rk-Nbd"/>
                     </connections>
