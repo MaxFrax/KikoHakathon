@@ -89,6 +89,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         for aSection in sectionList {
             lblDebug.text = "\(lblDebug.text!) \(aSection.beacon.minor)"
         }
+        
+        //sparo al web
+        let url = NSURL(string: "http://publisherls.altervista.org/save.php?id=\(currentSection.beacon.minor)&d1=\(currentSection.initialDate.timeIntervalSince1970)&d2=\(currentSection.finalDate.timeIntervalSince1970)")
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+        }
+        
+        task.resume()
     }
     
     func switchImages() {
