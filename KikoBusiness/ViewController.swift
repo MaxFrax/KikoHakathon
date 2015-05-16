@@ -67,6 +67,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     //salva prima sezione visitata
                     currentSection = section(beacon: b)
                     switchImages()
+                    sectionList.append(currentSection)
                     lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
                 }
                 else if(currentSection.beacon.minor != b.minor && currentSection.beacon.accuracy > b.accuracy){
