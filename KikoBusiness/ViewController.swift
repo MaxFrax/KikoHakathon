@@ -11,6 +11,21 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    struct section {
+        var beacon : CLBeacon
+        var initialDate : NSDate
+        var finalDate : NSDate
+        
+        init(beacon : CLBeacon){
+            self.beacon = beacon
+            self.initialDate = NSDate()
+            self.finalDate = NSDate()
+        }
+        
+    }
+    
+    let sectionList : [section] = []
+    
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "ACFD065E-C3C0-11E3-9BBE-1A514932AC01"), identifier: "0")
 
@@ -36,7 +51,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
-        println(beacons)
+
+        // guardiamo tutti i beacon visibili
+        for b in beacons as! [CLBeacon]! {
+            // quando ne troviamo uno near
+            if(b.proximity == CLProximity.Near){
+                //salvare roba
+            }
+        }
+        
     }
 
 }
