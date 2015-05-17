@@ -15,6 +15,7 @@
 		06F64D621B079297005722D2 /* KikoBusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F64D611B079297005722D2 /* KikoBusinessTests.swift */; };
 		06F64D6C1B079459005722D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64D6B1B079459005722D2 /* CoreLocation.framework */; };
 		06F64D721B07ACF6005722D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D711B07ACF6005722D2 /* Images.xcassets */; };
+		B33C891D1B0826AC001CA348 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33C891C1B0826AC001CA348 /* IngredientCell.swift */; };
 		B3F0A9F71B07E7D500253348 /* KikoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0A9F61B07E7D500253348 /* KikoCollectionViewCell.swift */; };
 		B3F0AA031B07F15500253348 /* SingleItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0AA021B07F15500253348 /* SingleItemViewController.swift */; };
 		B3F0AA051B08014700253348 /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0AA041B08014700253348 /* Inspiration.swift */; };
@@ -46,6 +47,7 @@
 		06F64D611B079297005722D2 /* KikoBusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KikoBusinessTests.swift; sourceTree = "<group>"; };
 		06F64D6B1B079459005722D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		06F64D711B07ACF6005722D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B33C891C1B0826AC001CA348 /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		B3F0A9F61B07E7D500253348 /* KikoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KikoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3F0AA021B07F15500253348 /* SingleItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleItemViewController.swift; sourceTree = "<group>"; };
 		B3F0AA041B08014700253348 /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				B3F0AA041B08014700253348 /* Inspiration.swift */,
 				B3F0AA061B0802E600253348 /* StoreSection.swift */,
 				B3F0A9F61B07E7D500253348 /* KikoCollectionViewCell.swift */,
+				B33C891C1B0826AC001CA348 /* IngredientCell.swift */,
 				B3F0AA081B080D4300253348 /* section-1 */,
 				06F64D4D1B079297005722D2 /* ViewController.swift */,
 				B3F0AA021B07F15500253348 /* SingleItemViewController.swift */,
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33C891D1B0826AC001CA348 /* IngredientCell.swift in Sources */,
 				B3F0AA051B08014700253348 /* Inspiration.swift in Sources */,
 				B3F0AA031B07F15500253348 /* SingleItemViewController.swift in Sources */,
 				B3F0A9F71B07E7D500253348 /* KikoCollectionViewCell.swift in Sources */,

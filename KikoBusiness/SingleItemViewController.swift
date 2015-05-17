@@ -8,14 +8,18 @@
 
 import UIKit
 
-class SingleItemViewController: UIViewController {
+class SingleItemViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var imageSingleView: UIImageView!
-
+    @IBOutlet weak var ingredientTable: UITableView!
+    
     var imageInspiration : Inspiration!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ingredientTable.delegate = self
+        ingredientTable.dataSource = self
         
         imageSingleView.image = UIImage(named: imageInspiration.imageFile)
         self.reloadInputViews()
@@ -31,6 +35,20 @@ class SingleItemViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! IngredientCell
+        
+        cell.setContents(UIImage(named: "section-1/img1.gif")!, name: "Titolo", desc: "Description")
+        
+        return cell
+    }
+    
+    
     /*
     // MARK: - Navigation
 
