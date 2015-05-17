@@ -133,7 +133,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return storeSectionList[currStoreIndex].inspirationList.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
