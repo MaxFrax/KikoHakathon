@@ -14,9 +14,13 @@
 		06F64D561B079297005722D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D541B079297005722D2 /* LaunchScreen.xib */; };
 		06F64D621B079297005722D2 /* KikoBusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F64D611B079297005722D2 /* KikoBusinessTests.swift */; };
 		06F64D6C1B079459005722D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64D6B1B079459005722D2 /* CoreLocation.framework */; };
-		06F64D6E1B07AA7A005722D2 /* img1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D6D1B07AA7A005722D2 /* img1.gif */; };
 		06F64D721B07ACF6005722D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D711B07ACF6005722D2 /* Images.xcassets */; };
-		06F64D741B07AF4C005722D2 /* img2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 06F64D731B07AF4C005722D2 /* img2.gif */; };
+		B3F0A9F71B07E7D500253348 /* KikoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0A9F61B07E7D500253348 /* KikoCollectionViewCell.swift */; };
+		B3F0AA031B07F15500253348 /* SingleItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0AA021B07F15500253348 /* SingleItemViewController.swift */; };
+		B3F0AA051B08014700253348 /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0AA041B08014700253348 /* Inspiration.swift */; };
+		B3F0AA071B0802E600253348 /* StoreSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0AA061B0802E600253348 /* StoreSection.swift */; };
+		B3F0AA091B080D4300253348 /* section-1 in Resources */ = {isa = PBXBuildFile; fileRef = B3F0AA081B080D4300253348 /* section-1 */; };
+		B3F0AA0B1B08114E00253348 /* section-2 in Resources */ = {isa = PBXBuildFile; fileRef = B3F0AA0A1B08114E00253348 /* section-2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +45,13 @@
 		06F64D601B079297005722D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F64D611B079297005722D2 /* KikoBusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KikoBusinessTests.swift; sourceTree = "<group>"; };
 		06F64D6B1B079459005722D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		06F64D6D1B07AA7A005722D2 /* img1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = img1.gif; sourceTree = "<group>"; };
 		06F64D711B07ACF6005722D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		06F64D731B07AF4C005722D2 /* img2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = img2.gif; sourceTree = "<group>"; };
+		B3F0A9F61B07E7D500253348 /* KikoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KikoCollectionViewCell.swift; sourceTree = "<group>"; };
+		B3F0AA021B07F15500253348 /* SingleItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleItemViewController.swift; sourceTree = "<group>"; };
+		B3F0AA041B08014700253348 /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
+		B3F0AA061B0802E600253348 /* StoreSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSection.swift; sourceTree = "<group>"; };
+		B3F0AA081B080D4300253348 /* section-1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "section-1"; sourceTree = "<group>"; };
+		B3F0AA0A1B08114E00253348 /* section-2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "section-2"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +96,14 @@
 			isa = PBXGroup;
 			children = (
 				06F64D711B07ACF6005722D2 /* Images.xcassets */,
-				06F64D6D1B07AA7A005722D2 /* img1.gif */,
-				06F64D731B07AF4C005722D2 /* img2.gif */,
 				06F64D481B079297005722D2 /* AppDelegate.swift */,
+				B3F0AA041B08014700253348 /* Inspiration.swift */,
+				B3F0AA061B0802E600253348 /* StoreSection.swift */,
+				B3F0A9F61B07E7D500253348 /* KikoCollectionViewCell.swift */,
+				B3F0AA081B080D4300253348 /* section-1 */,
 				06F64D4D1B079297005722D2 /* ViewController.swift */,
+				B3F0AA021B07F15500253348 /* SingleItemViewController.swift */,
+				B3F0AA0A1B08114E00253348 /* section-2 */,
 				06F64D4F1B079297005722D2 /* Main.storyboard */,
 				06F64D541B079297005722D2 /* LaunchScreen.xib */,
 				06F64D4A1B079297005722D2 /* KikoBusiness.xcdatamodeld */,
@@ -206,10 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				06F64D511B079297005722D2 /* Main.storyboard in Resources */,
+				B3F0AA0B1B08114E00253348 /* section-2 in Resources */,
 				06F64D721B07ACF6005722D2 /* Images.xcassets in Resources */,
-				06F64D741B07AF4C005722D2 /* img2.gif in Resources */,
 				06F64D561B079297005722D2 /* LaunchScreen.xib in Resources */,
-				06F64D6E1B07AA7A005722D2 /* img1.gif in Resources */,
+				B3F0AA091B080D4300253348 /* section-1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F0AA051B08014700253348 /* Inspiration.swift in Sources */,
+				B3F0AA031B07F15500253348 /* SingleItemViewController.swift in Sources */,
+				B3F0A9F71B07E7D500253348 /* KikoCollectionViewCell.swift in Sources */,
+				B3F0AA071B0802E600253348 /* StoreSection.swift in Sources */,
 				06F64D4E1B079297005722D2 /* ViewController.swift in Sources */,
 				06F64D491B079297005722D2 /* AppDelegate.swift in Sources */,
 				06F64D4C1B079297005722D2 /* KikoBusiness.xcdatamodeld in Sources */,
@@ -425,6 +441,7 @@
 				06F64D671B079297005722D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06F64D681B079297005722D2 /* Build configuration list for PBXNativeTarget "KikoBusinessTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +450,7 @@
 				06F64D6A1B079297005722D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
