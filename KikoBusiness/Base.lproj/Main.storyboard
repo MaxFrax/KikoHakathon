@@ -36,8 +36,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gj7-T6-S5S">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Pensati per te" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMB-HO-vNE">
+                                <rect key="frame" x="234" y="8" width="132" height="21"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gj7-T6-S5S">
+                                <rect key="frame" x="0.0" y="37" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="gpN-8N-vhF">
                                     <size key="itemSize" width="232" height="232"/>
@@ -60,10 +66,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="VEf-cS-YyU" firstAttribute="leading" secondItem="SqH-1u-jIb" secondAttribute="leading" id="DSl-Mf-SM1"/>
-                                            <constraint firstAttribute="bottom" secondItem="VEf-cS-YyU" secondAttribute="bottom" id="OhE-ZS-bVA"/>
-                                            <constraint firstItem="VEf-cS-YyU" firstAttribute="top" secondItem="SqH-1u-jIb" secondAttribute="top" id="g0X-dc-z9F"/>
-                                            <constraint firstAttribute="trailing" secondItem="VEf-cS-YyU" secondAttribute="trailing" id="q9R-vS-SLu"/>
+                                            <constraint firstItem="VEf-cS-YyU" firstAttribute="leading" secondItem="SqH-1u-jIb" secondAttribute="leading" id="943-90-wgQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="VEf-cS-YyU" secondAttribute="trailing" id="b8K-DN-ejH"/>
+                                            <constraint firstItem="VEf-cS-YyU" firstAttribute="top" secondItem="SqH-1u-jIb" secondAttribute="top" id="eDS-HH-BnV"/>
+                                            <constraint firstAttribute="bottom" secondItem="VEf-cS-YyU" secondAttribute="bottom" id="lHS-fw-jff"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="cellImage" destination="VEf-cS-YyU" id="ac4-VQ-l2k"/>
@@ -74,10 +80,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gj7-T6-S5S" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="BMA-GC-R46"/>
-                            <constraint firstAttribute="trailing" secondItem="Gj7-T6-S5S" secondAttribute="trailing" id="OpL-lm-A6a"/>
-                            <constraint firstItem="Gj7-T6-S5S" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="PzB-Yi-2wx"/>
-                            <constraint firstItem="Gj7-T6-S5S" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="lMf-xB-cwr"/>
+                            <constraint firstItem="eMB-HO-vNE" firstAttribute="centerX" secondItem="Gj7-T6-S5S" secondAttribute="centerX" id="XB2-1s-f77"/>
+                            <constraint firstAttribute="trailing" secondItem="Gj7-T6-S5S" secondAttribute="trailing" id="llc-bn-W9q"/>
+                            <constraint firstItem="Gj7-T6-S5S" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="vfF-2m-w2Q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="KIKO" id="hYO-Zn-cVt"/>
@@ -88,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299" y="483"/>
+            <point key="canvasLocation" x="297" y="475"/>
         </scene>
         <!--Single Item View Controller-->
         <scene sceneID="RKQ-Nb-r5p">
