@@ -94,7 +94,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
                     var nextCurrent = section(beacon: b)
                     nextCurrent.finalDate = NSDate()
                     if (currentSection.finalDate.timeIntervalSinceDate(currentSection.initialDate) > 1) {
-                        switchImages()
+                        switchSection()
                         currentSection = section(beacon: b)
                         sectionList.append(nextCurrent)
                     }
@@ -105,7 +105,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
                     var d1 = round(currentSection.initialDate.timeIntervalSince1970)
                     var d2 = round(currentSection.finalDate.timeIntervalSince1970)
                     
-                    let url = NSURL(string: "http://publisherls.altervista.org/save.php?id=\(d1)&d1=\(currentSection.initialDate.timeIntervalSince1970)&d2=\(d2)")
+                    let url = NSURL(string: "http://publisherls.altervista.org/save.php?id=\(currentSection.beacon.minor)&d1=\(d1)&d2=\(d2)")
                     
                     let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
                         println(NSString(data: data, encoding: NSUTF8StringEncoding))
