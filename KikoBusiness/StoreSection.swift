@@ -12,10 +12,11 @@ class StoreSection : NSObject {
     
     var inspirationList : [Inspiration] = []
     
-    init(sector_index : Int) {
-        for loop_index in 1...4 {
-            var insp = Inspiration(sector : sector_index, index : loop_index)
+    init( json: NSArray) {
+        for loop_index in 0...(json.count-1) {
+            var insp = Inspiration(json : json[loop_index] as! NSDictionary)
             inspirationList.append(insp)
         }
+        
     }
 }

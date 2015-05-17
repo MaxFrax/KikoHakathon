@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>2BE76ABC-2249-4D29-8A89-231F56DB381A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>KikoBusiness</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5D7DD1E3FD2E4B107F852673A358441BA7789E3C</key>
 		<string>github.com:MaxFrax/KikoHakathon.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>KikoBusiness.xcodeproj/project.xcworkspace</string>
+	<string>KikoBusiness.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5D7DD1E3FD2E4B107F852673A358441BA7789E3C</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>5D7DD1E3FD2E4B107F852673A358441BA7789E3C</string>
 			<key>IDESourceControlWCCName</key>
-			<string>KikoBusiness</string>
+			<string>KikoHakathon</string>
 		</dict>
 	</array>
 </dict>

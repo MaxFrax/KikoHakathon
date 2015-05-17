@@ -19,10 +19,14 @@ class Inspiration : NSObject {
     let imageFile : String
     var ingredientsList : [Ingredient] = []
     
-    init (sector: Int, index: Int) {
-        imageFile = "section-\(sector)/img\(index).gif"
-        var fake_ing = Ingredient(ingredientImage: imageFile, ingredientTitle: "Titolo", ingredientDescription: "Descrizione molto lunga")
-        ingredientsList.append(fake_ing)
+    init (json: NSDictionary) {
+        imageFile = json["filename"] as! String
+        let ingr_array = json["ingredient"] as! NSArray
+        for ingredient_index in 0...(ingr_array.count - 1) {
+            let json_ingredient : NSDictionary = ingr_array[ingredient_index] as! NSDictionary
+            var ingrediente = Ingredient(ingredientImage: json_ingredient["image"] as! String, ingredientTitle: json_ingredient["title"] as! String, ingredientDescription: json_ingredient["description"] as! String)
+            ingredientsList.append(ingrediente)
+        }
     }
     
     

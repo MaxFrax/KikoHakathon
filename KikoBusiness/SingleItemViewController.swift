@@ -37,13 +37,13 @@ class SingleItemViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return imageInspiration.ingredientsList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! IngredientCell
         
-        cell.setContents(UIImage(named: "section-1/img1.gif")!, name: "Titolo", desc: "Description")
+        cell.setContents(UIImage(named: imageInspiration.ingredientsList[indexPath.item].ingredientImage)!, name: imageInspiration.ingredientsList[indexPath.item].ingredientTitle, desc: imageInspiration.ingredientsList[indexPath.item].ingredientDescription)
         
         return cell
     }

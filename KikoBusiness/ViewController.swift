@@ -67,10 +67,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
         //avviamo la magia
         locationManager.startRangingBeaconsInRegion(region)
         
-        var section_1 = StoreSection(sector_index : 1)
-        storeSectionList.append(section_1)
-        var section_2 = StoreSection(sector_index : 2)
-        storeSectionList.append(section_2)
+        var urlpath = NSBundle.mainBundle().pathForResource("db", ofType: "json")
+        var endpoint = NSURL.fileURLWithPath(urlpath!)!
+        var data = NSData(contentsOfURL: endpoint)
+        
+        if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
+            
+            if let trucchi = json["trucchi"] as? NSArray {
+                var section_1 = StoreSection(json: trucchi)
+                storeSectionList.append(section_1)
+            }
+            if let smalti = json["smalti"] as? NSArray {
+                var section_2 = StoreSection(json: smalti)
+                storeSectionList.append(section_2)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
