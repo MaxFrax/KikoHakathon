@@ -21,7 +21,7 @@ class SingleItemViewController: UIViewController, UITableViewDataSource, UITable
         ingredientTable.delegate = self
         ingredientTable.dataSource = self
         
-        imageSingleView.image = UIImage.animatedImageWithAnimatedGIFURL( NSURL.fileURLWithPath(imageInspiration.imageFile))
+        imageSingleView.image = UIImage.animatedImageWithAnimatedGIFURL(NSURL(string:imageInspiration.imageFile))
         self.reloadInputViews()
 
         // Do any additional setup after loading the view.

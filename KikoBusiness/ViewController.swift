@@ -137,7 +137,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
         let currStore : StoreSection = storeSectionList[currStoreIndex]
         let currInsp : Inspiration = currStore.inspirationList[curr]
 //        cell.cellImage.image = UIImage(named: currInsp.imageFile)
-        cell.cellImage.image = UIImage.animatedImageWithAnimatedGIFURL( NSURL.fileURLWithPath(currInsp.imageFile))
+        cell.cellImage.image = UIImage.animatedImageWithAnimatedGIFURL(NSURL(string: currInsp.imageFile))
         return cell
     }
     
