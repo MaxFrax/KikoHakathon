@@ -65,14 +65,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             if(b.proximity == CLProximity.Near){
                 //salvare roba
                 if (currentSection == nil) {
-                //salva prima sezione visitata
-                currentSection = section(beacon: b)
-                switchImages()
-                sectionList.append(currentSection)
-                lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
+                    //salva prima sezione visitata
+                    currentSection = section(beacon: b)
+                    switchImages()
+                    sectionList.append(currentSection)
+                    lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
                 } else if(currentSection.beacon.minor != b.minor && currentSection.beacon.accuracy > b.accuracy){
                     currentSection.finalDate = NSDate()
                     var nextCurrent = section(beacon: b)
+                    nextCurrent.finalDate = NSDate()
                     if (currentSection.finalDate.timeIntervalSinceDate(currentSection.initialDate) > 1) {
                         switchImages()
                         lblMinor.text = "\(currentSection.beacon.minor) \(currentSection.beacon.accuracy)"
@@ -81,6 +82,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     }
                     
                     currentSection = nextCurrent
+                    
+                    //sparo al web
+                    var d1 = round(currentSection.initialDate.timeIntervalSince1970)
+                    var d2 = round(currentSection.finalDate.timeIntervalSince1970)
+                    
+                    let url = NSURL(string: "http://publisherls.altervista.org/save.php?id=\(d1)&d1=\(currentSection.initialDate.timeIntervalSince1970)&d2=\(d2)")
+                    
+                    let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+                        println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                    }
+                    
+                    task.resume()
                 }
             }
         }
@@ -89,15 +102,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         for aSection in sectionList {
             lblDebug.text = "\(lblDebug.text!) \(aSection.beacon.minor)"
         }
-        
-        //sparo al web
-        let url = NSURL(string: "http://publisherls.altervista.org/save.php?id=\(currentSection.beacon.minor)&d1=\(currentSection.initialDate.timeIntervalSince1970)&d2=\(currentSection.finalDate.timeIntervalSince1970)")
-        
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
-        }
-        
-        task.resume()
     }
     
     func switchImages() {
