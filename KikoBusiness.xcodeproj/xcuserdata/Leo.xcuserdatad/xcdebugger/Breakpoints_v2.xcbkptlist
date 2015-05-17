@@ -151,12 +151,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KikoBusiness/ViewController.swift"
-            timestampString = "453514769.717674"
+            timestampString = "453524447.472144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "locationManager(_:didRangeBeacons:inRegion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -167,12 +167,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KikoBusiness/ViewController.swift"
-            timestampString = "453514769.717674"
+            timestampString = "453524447.472144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "numberOfSectionsInCollectionView(_:)"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "locationManager(_:didRangeBeacons:inRegion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -183,12 +183,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KikoBusiness/ViewController.swift"
-            timestampString = "453514769.717674"
+            timestampString = "453524447.472144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "numberOfSectionsInCollectionView(_:)"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "locationManager(_:didRangeBeacons:inRegion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -198,13 +198,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KikoBusiness/StoreSection.swift"
-            timestampString = "453512799.488812"
+            filePath = "KikoBusiness/ViewController.swift"
+            timestampString = "453523917.768963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "init(sector_index:)"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
