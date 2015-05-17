@@ -102,8 +102,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
             if(b.proximity == CLProximity.Near){
                 if(currentSection == nil){
                     currentSection = section(beacon: b)
+                    switchSection()
                 } else if (currentSection.beacon.minor != b.minor) {
                     currentSection = section(beacon: b)
+                    switchSection()
                 }
             }
         }
