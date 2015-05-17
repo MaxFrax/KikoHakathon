@@ -174,6 +174,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
         }
         else if (currStoreIndex == 1) {
             currStoreIndex = 0
+            collectionView.reloadData()
         }
     }
 }
