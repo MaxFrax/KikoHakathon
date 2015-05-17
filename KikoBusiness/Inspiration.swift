@@ -17,10 +17,12 @@ class Inspiration : NSObject {
     }
     
     let imageFile : String
+    let imageFileLocal : String
     var ingredientsList : [Ingredient] = []
     
     init (json: NSDictionary) {
         imageFile = json["filename"] as! String
+        imageFileLocal = json["filenamelocal"] as! String
         let ingr_array = json["ingredient"] as! NSArray
         for ingredient_index in 0...(ingr_array.count - 1) {
             let json_ingredient : NSDictionary = ingr_array[ingredient_index] as! NSDictionary
