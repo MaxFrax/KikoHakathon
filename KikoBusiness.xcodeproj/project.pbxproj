@@ -18,6 +18,7 @@
 		B33C891D1B0826AC001CA348 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33C891C1B0826AC001CA348 /* IngredientCell.swift */; };
 		B33C891F1B083261001CA348 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = B33C891E1B083261001CA348 /* db.json */; };
 		B33C89211B08345D001CA348 /* ingredients_img in Resources */ = {isa = PBXBuildFile; fileRef = B33C89201B08345D001CA348 /* ingredients_img */; };
+		B33C89261B086C8B001CA348 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = B33C89241B086C8B001CA348 /* UIImage+animatedGIF.m */; };
 		B3F0A9F71B07E7D500253348 /* KikoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0A9F61B07E7D500253348 /* KikoCollectionViewCell.swift */; };
 		B3F0AA031B07F15500253348 /* SingleItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0AA021B07F15500253348 /* SingleItemViewController.swift */; };
 		B3F0AA051B08014700253348 /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F0AA041B08014700253348 /* Inspiration.swift */; };
@@ -52,6 +53,9 @@
 		B33C891C1B0826AC001CA348 /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		B33C891E1B083261001CA348 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
 		B33C89201B08345D001CA348 /* ingredients_img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ingredients_img; sourceTree = "<group>"; };
+		B33C89231B086C8B001CA348 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		B33C89241B086C8B001CA348 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		B33C89281B086CBA001CA348 /* KikoBusiness-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KikoBusiness-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3F0A9F61B07E7D500253348 /* KikoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KikoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3F0AA021B07F15500253348 /* SingleItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleItemViewController.swift; sourceTree = "<group>"; };
 		B3F0AA041B08014700253348 /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
@@ -105,6 +109,9 @@
 				06F64D481B079297005722D2 /* AppDelegate.swift */,
 				B3F0AA041B08014700253348 /* Inspiration.swift */,
 				B3F0AA061B0802E600253348 /* StoreSection.swift */,
+				B33C89281B086CBA001CA348 /* KikoBusiness-Bridging-Header.h */,
+				B33C89231B086C8B001CA348 /* UIImage+animatedGIF.h */,
+				B33C89241B086C8B001CA348 /* UIImage+animatedGIF.m */,
 				B33C891E1B083261001CA348 /* db.json */,
 				B33C89201B08345D001CA348 /* ingredients_img */,
 				B3F0A9F61B07E7D500253348 /* KikoCollectionViewCell.swift */,
@@ -254,6 +261,7 @@
 				B3F0AA051B08014700253348 /* Inspiration.swift in Sources */,
 				B3F0AA031B07F15500253348 /* SingleItemViewController.swift in Sources */,
 				B3F0A9F71B07E7D500253348 /* KikoCollectionViewCell.swift in Sources */,
+				B33C89261B086C8B001CA348 /* UIImage+animatedGIF.m in Sources */,
 				B3F0AA071B0802E600253348 /* StoreSection.swift in Sources */,
 				06F64D4E1B079297005722D2 /* ViewController.swift in Sources */,
 				06F64D491B079297005722D2 /* AppDelegate.swift in Sources */,
@@ -339,6 +347,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "KikoBusiness/KikoBusiness-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -376,6 +385,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "KikoBusiness/KikoBusiness-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
