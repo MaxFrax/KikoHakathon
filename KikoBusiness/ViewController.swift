@@ -47,7 +47,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
     private let reuseIdentifier = "KikoCellIdentifier"
     private let itemSegueIdentifier = "showCellDetail"
     private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -82,36 +82,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
         
         // guardiamo tutti i beacon visibili
         for b in beacons as! [CLBeacon]! {
+            if(currentSection != nil && currentSection.beacon.minor == b.minor && b.proximity != currentSection.beacon.proximity){
+                currentSection.finalDate = NSDate()
+                sectionList.append(currentSection)
+                //sparo al web
+                var d1 = round(currentSection.initialDate.timeIntervalSince1970)
+                var d2 = round(currentSection.finalDate.timeIntervalSince1970)
+                
+                let url = NSURL(string: "http://publisherls.altervista.org/save.php?id=\(currentSection.beacon.minor)&d1=\(d1)&d2=\(d2)")
+                
+                let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+                    println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                }
+                
+                task.resume()
+                currentSection = nil
+            }
             // quando ne troviamo uno near
             if(b.proximity == CLProximity.Near){
-                //salvare roba
-                if (currentSection == nil) {
-                    //salva prima sezione visitata
+                if(currentSection == nil){
                     currentSection = section(beacon: b)
-                    sectionList.append(currentSection)
-                } else if(currentSection.beacon.minor != b.minor && currentSection.beacon.accuracy > b.accuracy){
-                    currentSection.finalDate = NSDate()
-                    var nextCurrent = section(beacon: b)
-                    nextCurrent.finalDate = NSDate()
-                    if (currentSection.finalDate.timeIntervalSinceDate(currentSection.initialDate) > 1) {
-                        switchSection()
-                        currentSection = section(beacon: b)
-                        sectionList.append(nextCurrent)
-                    }
-                    
-                    currentSection = nextCurrent
-                    
-                    //sparo al web
-                    var d1 = round(currentSection.initialDate.timeIntervalSince1970)
-                    var d2 = round(currentSection.finalDate.timeIntervalSince1970)
-                    
-                    let url = NSURL(string: "http://publisherls.altervista.org/save.php?id=\(currentSection.beacon.minor)&d1=\(d1)&d2=\(d2)")
-                    
-                    let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-                        println(NSString(data: data, encoding: NSUTF8StringEncoding))
-                    }
-                    
-                    task.resume()
+                    switchSection()
+                } else if (currentSection.beacon.minor != b.minor) {
+                    currentSection = section(beacon: b)
+                    switchSection()
                 }
             }
         }
@@ -150,7 +144,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UICollectionV
     func collectionView(collectionView: UICollectionView!,
         layout collectionViewLayout: UICollectionViewLayout!,
         insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return sectionInsets
+            return sectionInsets
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
